@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+  <div class="col-md-80">
+    <div class="card mb-6">
+      <div class="card-body bg-info">
+        <div class="user-info">
+          <h2>
+            <img class="user-image" src="<%= post.user.photo %>" alt="Imagen de perfil" style="width: 50px; height: 50px;">
+            <%= post.user.name %> <i class="fa-solid fa-user fa-sm" style="color: #dd2222;"></i> <%= post.user.email %>
+          </h2>
+        </div>
+        <h5 class="card-title">Titulo: <%= post.title %></h5>
+        <p class="card-text text-dark"><%= post.description %></p>
+        <div>
+          <%= link_to "Like #{post.reactions.select { |post| post[:kind] == 'like' }.count}", post, class: "card-link" %><i class="fa-solid fa-face-grin-hearts fa-lg" style="color: #c20f0f;"></i>
+          <%= link_to "Dislike #{post.reactions.select { |post| post[:kind] == 'dislike' }.count}", post, class: "card-link" %><i class="fa-regular fa-face-angry fa-lg" style="color: #d50101;"></i>
+        </div>
+        <%= post.updated_at %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posteos</h1>
+<%= link_to "New post", new_post_path,class:"btn btn-primary mb-3" %>
+<div id="posts">
+    <div class="card" style="width: 60rem;">
+      <div class="card-body">
+        <%= render @post %>
+
+      
+      </div>
+      <div class="d-flex justify-content-between">
+        <%= link_to "Edit this post", edit_post_path(@post), class:"btn btn-warning mb-3 "%> |
+        <%= button_to "Destroy this post", @post, method: :delete, class:"btn btn-danger mb-3 " %>
+      </div>
+
+    </div>
+</div>
